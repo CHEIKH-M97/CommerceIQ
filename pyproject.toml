@@ -1,0 +1,24 @@
+[project]
+name = "commerceiq"
+version = "0.1.0"
+description = "Business Intelligence platform for large-scale e-commerce analytics."
+readme = "README.md"
+authors = [
+    { name = "CHEIKH-M97", email = "yessin.cheikhrouhou05@hotmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "polars>=1.43.2",
+]
+
+[project.scripts]
+commerceiq = "commerceiq:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
