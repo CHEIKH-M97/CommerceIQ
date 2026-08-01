@@ -1,0 +1,4 @@
+order_id,order_total,order_source,client_nom,client_adresse,client_governorat,client_gsm1,client_gsm2
+1,50,Live, Hiba , Tunis ,Tunis,12345678,
+1,50,Live,Hiba,Tunis,Tunis,12345678,
+2,80,Page,Najla,Sousse,Sousse,87654321,
