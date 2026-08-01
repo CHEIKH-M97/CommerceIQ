@@ -1,4 +1,4 @@
-order_id,order_total,order_source,client_governorat
-1,50,TikTok Live,Tunis
-2,120,Website,Sousse
-3,80,Facebook Page,Sfax
+order_id,order_total,order_source,client_nom,client_adresse,client_governorat,client_gsm1,client_gsm2
+1684715,43.000,Live,Zeineb ,Rades,Ben Arous,22867616,
+1684714,61.600,0,chatti Imen ,"20, avenue 15 octobre, Lacagna, Tunis",Tunis,24863098,
+1684713,23.200,Live,Latifa,Gremda,Sfax,28029851,
