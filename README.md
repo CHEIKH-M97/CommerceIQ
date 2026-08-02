@@ -55,7 +55,7 @@ Average Order: 76.03 TND
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/CommerceIQ.git
+git clone https://github.com/CHEIKH-M97/CommerceIQ.git
 
 cd CommerceIQ
 
