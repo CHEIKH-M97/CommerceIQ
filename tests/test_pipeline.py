@@ -1,12 +1,12 @@
 from commerceiq.ingestion.csv_source import CSVDataSource
 from commerceiq.pipeline.order_pipeline import OrderPipeline
 from commerceiq.validation.schema_validator import SchemaValidator
-
+from commerceiq.cleaning.order_cleaner import OrderCleaner
 
 def test_order_pipeline():
 
     source = CSVDataSource(
-        "tests/test_data/sample_orders.csv"
+        "tests/test_data/dirty_orders.csv"
     )
 
     validator = SchemaValidator(
@@ -23,11 +23,14 @@ def test_order_pipeline():
 
     pipeline = OrderPipeline(
         source,
-        validator
+        validator,
+        OrderCleaner()
     )
 
     result = pipeline.run()
 
     assert result.success is True
-    assert result.rows_count == 3
-    assert result.data.shape[0] == 3
+
+    assert result.rows_loaded == 3
+
+    assert result.cleaning_result.final_rows == 2
