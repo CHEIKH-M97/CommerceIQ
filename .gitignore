@@ -19,18 +19,12 @@ venv/
 
 # Data
 data/orders.csv
-data/raw/*
-data/processed/*
 
 # Build files
 dist/
 build/
 *.egg-info/
-# Large datasets
-data/
 
-# Ignore CSV files anywhere
-*.csv
 
 # Python
 __pycache__/

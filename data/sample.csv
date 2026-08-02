@@ -1,0 +1,4 @@
+order_id,order_total,order_source,client_nom,client_adresse,client_governorat,client_gsm1,client_gsm2
+1,100,Live,Ahmed,Sousse,Sousse,11111111,
+2,50,Page,Tarek,Tunis,Tunis,22222222,
+3,70,Live,Sami,Sfax,Sfax,11111111,
