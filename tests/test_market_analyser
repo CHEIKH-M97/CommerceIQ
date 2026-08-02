@@ -1,0 +1,42 @@
+import polars as pl
+
+from commerceiq.analytics.market_analyzer import MarketAnalyzer
+
+
+def test_revenue_by_channel():
+
+    data = pl.DataFrame(
+        {
+            "order_source": [
+                "live",
+                "live",
+                "page",
+                "instagram",
+            ],
+            "order_total": [
+                100.0,
+                50.0,
+                200.0,
+                75.0,
+            ],
+            "client_gsm1": [
+                "11111111",
+                "22222222",
+                "11111111",
+                "33333333",
+            ],
+        }
+    )
+
+    analyzer = MarketAnalyzer()
+
+    result = analyzer.revenue_by_channel(data)
+
+    assert result.height == 3
+
+    page = result.filter(pl.col("order_source") == "page")
+
+    assert page["revenue"][0] == 200.0
+    assert page["orders"][0] == 1
+    assert page["unique_customers"][0] == 1
+    assert page["average_order"][0] == 200.0
