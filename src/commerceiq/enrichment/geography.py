@@ -29,13 +29,17 @@ GOVERNORATE_MAP = {
         "zone": "North",
         "type": "Interior",
     },
-    "le kef": {
+    "kef": {
         "zone": "North",
         "type": "Interior",
     },
     "siliana": {
         "zone": "North",
         "type": "Interior",
+    },
+    "nabeul": {
+        "zone": "North",
+        "type": "Coastal",
     },
 
 
@@ -61,6 +65,10 @@ GOVERNORATE_MAP = {
         "type": "Interior",
     },
     "kasserine": {
+        "zone": "Center",
+        "type": "Interior",
+    },
+    "sidi bouzid": {
         "zone": "Center",
         "type": "Interior",
     },
