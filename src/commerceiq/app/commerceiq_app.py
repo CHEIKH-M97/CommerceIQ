@@ -2,6 +2,7 @@ from pathlib import Path
 
 from commerceiq.analytics.kpi_builder import KPIBuilder
 from commerceiq.analytics.market_analyzer import MarketAnalyzer
+from commerceiq.app.result import CommerceIQResult
 from commerceiq.cleaning.order_cleaner import OrderCleaner
 from commerceiq.enrichment.geography_enricher import GeographyEnricher
 from commerceiq.ingestion.csv_source import CSVDataSource
@@ -12,10 +13,10 @@ from commerceiq.validation.schema_validator import SchemaValidator
 
 class CommerceIQApp:
 
-    def analyze(
+    def run(
         self,
         csv_path: str | Path,
-    ) -> str:
+    ) -> CommerceIQResult:
 
         source = CSVDataSource(csv_path)
 
@@ -40,4 +41,8 @@ class CommerceIQApp:
             analysis=analysis,
         )
 
-        return report
+        return CommerceIQResult(
+        kpis=kpis,
+        analysis=analysis,
+        data=data,
+)

@@ -1,6 +1,7 @@
 import argparse
 
 from commerceiq.app.commerceiq_app import CommerceIQApp
+from commerceiq.reporting.report_generator import ReportGenerator
 
 
 def main() -> None:
@@ -26,7 +27,12 @@ def main() -> None:
     if args.command == "analyze":
         app = CommerceIQApp()
 
-        report = app.analyze(args.csv_path)
+        result = app.run(args.csv_path)
+
+        report = ReportGenerator().generate(
+            result.kpis,
+            result.analysis,
+        )
 
         print(report)
 
